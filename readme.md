@@ -1,4 +1,5 @@
 ## Automatic message sender for Facebook Messenger with Playwright
+Since META does not provide an API for sending messages in messenger I will make my own solution.
 
 ### Setup
 1. Install dependancies with `npm install`

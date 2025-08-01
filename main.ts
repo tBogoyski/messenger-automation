@@ -92,7 +92,7 @@ async function sendMessageToFacebookChat() {
   await page.waitForTimeout(700);
   
   await humanClick(page, 'button[type="submit"]');
-  await randomDelay(2000, 3000);
+  await randomDelay(5000, 8000);
   
   await page.goto(process.env.FACEBOOK_CHAT_URL || '', {
     waitUntil: 'domcontentloaded',
