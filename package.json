@@ -1,0 +1,27 @@
+{
+  "name": "messenger-automation",
+  "version": "1.0.0",
+  "description": "Playwright automation for Facebook Messenger",
+  "main": "main.ts",
+  "scripts": {
+    "start": "npx tsx main.ts",
+    "dev": "npx tsx main.ts"
+  },
+  "keywords": [
+    "playwright",
+    "automation",
+    "facebook",
+    "messenger"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.1",
+    "playwright": "^1.40.0"
+  }
+}
