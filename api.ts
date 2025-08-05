@@ -14,7 +14,7 @@ export async function getRandomQuote() {
     }
   }
   
-  export async function getRandomDadJoke() {
+export async function getRandomDadJoke() {
     try {
       const response = await fetch('https://icanhazdadjoke.com/', {
         headers: {
@@ -29,3 +29,21 @@ export async function getRandomQuote() {
       console.error('Error fetching dad joke:', error);
     }
   }
+
+export async function getRandomOffensiveJoke() {
+  try {
+    const response = await fetch('https://v2.jokeapi.dev/joke/Dark');
+    
+    if (response.ok) {
+      const jokeData = await response.json();
+      
+      if (jokeData.type === 'single') {
+        return jokeData.joke;
+      } else {
+        return `${jokeData.setup}\n\n${jokeData.delivery}`;
+      }
+    }
+  } catch (error) {
+    console.error('Error fetching offensive joke:', error);
+  }
+}

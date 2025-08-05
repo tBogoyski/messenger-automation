@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import { chromium, Browser, Page } from 'playwright';
-import { getRandomQuote, getRandomDadJoke } from './api';
+import { getRandomQuote, getRandomDadJoke, getRandomOffensiveJoke } from './api';
 
 // Helper function for random delays
 function randomDelay(min: number, max: number): Promise<void> {
@@ -121,6 +121,12 @@ async function sendMessageToFacebookChat() {
 
   // Write dad joke
   await page.keyboard.type('Dad joke of the day: ' + await getRandomDadJoke());
+  await page.waitForTimeout(1000);
+  await page.keyboard.press('Enter');
+  await page.waitForTimeout(1000);
+
+  // Write offensive joke
+  await page.keyboard.type('Offensive joke of the day: ' + await getRandomOffensiveJoke());
   await page.waitForTimeout(1000);
   await page.keyboard.press('Enter');
   await page.waitForTimeout(1000);
